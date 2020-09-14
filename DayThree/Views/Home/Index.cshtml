@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+@{
+
+    string url = "https://google.com";
+
+    string html = "<h1>HTML TEST !!!!!!!!!!!!!!!!!!!</h1>";
+}
+
+<a href="@url">google</a>
+<a href="@url">google</a>
+
+<div>@Context.Request.Host.ToString()</div>
+
+Current time is: @DateTime.Now!!!
+
+
+<p>HTML encoded value: @Html.Raw(html)</p>
+<p>Not HTML encoded value: @html</p>
+
+@{
+    if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+    {
+        <h2>It's Friday @Html.Raw(html)</h2>
+    }
+    else
+    {
+        <h2>It's not Friday :(</h2>
+    }
+
+    for (int k = 0; k < 10; k++)
+    {
+        <h1>@(k + 1)</h1>
+    }
+}
+
+@for (int k = 0; k < 10; k++)
+{
+    <h1>@(k + 1)</h1>
+}
+<span>test@test.com</span>
+@*
+    
+*@
+
+@{ 
+    //A C# comment
+}

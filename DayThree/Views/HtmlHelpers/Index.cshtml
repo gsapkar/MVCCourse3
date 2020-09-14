@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Html Helpers Index";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("Create", "HtmlHelpers", FormMethod.Post, new { style = "border: 2px solid green" }))
+{
+
+    @Html.Label("FirstNameId", "First Name", new { style = "color:red; font-size:20px;", @id = 4 })
+
+
+    @Html.TextBox("Name", "Input text", new { style = "padding:10px;" })
+
+    <br>
+    <br>
+
+    @Html.TextArea("TextAreaId", "Note example", new { cols = "30", rows = "20" })
+
+
+    <br>
+    @Html.Label("IsFemale", "Is Female", new { style = "color:red; font-size:20px;", @id = 4 })
+    @Html.RadioButton("Female", "Female", false)
+
+
+    <br>
+    @Html.Label("HasError", "Has error", new { style = "color:red; font-size:20px;", @id = 4 })
+    @Html.CheckBox("HasError", true)
+
+
+    <br>
+    @Html.Label("Password", "Password", new { style = "color:red; font-size:20px;", @id = 4 })
+    @Html.Password("password")
+    <br>
+
+    @Html.Label("City", "City", new { style = "color:red; font-size:20px;", @id = 4 })
+    @Html.DropDownList("City", new List<SelectListItem>
+    {
+        new SelectListItem{Text = "Ohrid", Value = "0"},
+        new SelectListItem{Text = "Skopje", Value = "1"},
+        new SelectListItem{Text = "Bitola", Value = "2"},
+        new SelectListItem{Text = "Debar", Value = "3"}
+    })
+
+
+    <br>
+
+    <p>
+        Cas3HtmlHelpersController, Index method
+        @Html.ActionLink("Home label of link", "Index")
+    </p>
+
+    <br>
+    <p>
+        Home controller, Index method
+        @Html.ActionLink("Home label of link", "Index", "Home")
+    </p>
+
+    <p>
+        Home controller, Index method 2nd way
+        @Html.ActionLink("Home label of link", "Index", new { controller = "Home" })
+    </p>
+
+
+    <input type="submit" value="Create">
+}
+
+
